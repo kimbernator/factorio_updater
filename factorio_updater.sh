@@ -36,9 +36,10 @@ $factorio_loc save-game $save_name
 old_folder="/opt/factorio_${old_ver}"
 echo "Backing current installation up to ${old_folder}"
 mv /opt/factorio $old_folder
+mkdir /opt/factorio
 
 echo "Installing new version"
-$factorio_loc install > /dev/null 2>&1
+$factorio_loc install
 RC=$?
 if [[ $RC -eq 0 ]]
 then
